@@ -4,7 +4,7 @@
   "description": "learning backend ",
   "type": "module",
   "main": "index.js",
- "scripts": {
+  "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
@@ -19,8 +19,11 @@
     "prettier": "^3.9.6"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongoose": "^9.10.1"
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.10.1",
+    "mongoose-aggregate-paginate-v2": "^1.1.5"
   }
 }
