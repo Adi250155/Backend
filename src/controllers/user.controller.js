@@ -6,7 +6,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose";
 
-
+//variables functions name should be clear and readable 
 const generateAccessAndRefereshTokens = async(userId) =>{
     try {
         const user = await User.findById(userId)
@@ -99,8 +99,9 @@ const registerUser = asyncHandler( async (req, res) => {
 } )
 
 const loginUser = asyncHandler(async (req, res) =>{
-    // req body -> data
-    // username or email
+    //Steps:
+    //req body -> data
+    //username or email
     //find the user
     //password check
     //access and referesh token
@@ -113,7 +114,7 @@ const loginUser = asyncHandler(async (req, res) =>{
         throw new ApiError(400, "username or email is required")
     }
     
-    //  alternative of above code
+    //  if only one is req 
     // if (!(username || email)) {
     //     throw new ApiError(400, "username or email is required")
         
@@ -159,6 +160,7 @@ const loginUser = asyncHandler(async (req, res) =>{
 })
 
 const logoutUser = asyncHandler(async(req, res) => {
+    
     await User.findByIdAndUpdate(
         req.user._id,
         {
